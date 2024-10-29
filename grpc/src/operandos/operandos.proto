@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "leomichalski.xyz/operandos";
+
+message Operandos {
+  int32 x = 1;
+  int32 y = 2;
+  optional string nome = 3;
+}
+
+message OperandosResultado {
+  int32 resultado = 1;
+}
+
+service OperandosService {
+    rpc Add(Operandos) returns (OperandosResultado) {}
+
+    // A bidirectional streaming RPC where both sides send a sequence of messages
+    // using a read-write stream. The two streams operate independently,
+    // so clients and servers can read and write in whatever order they like (...)
+    // rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+}
