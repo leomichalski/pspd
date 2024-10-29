@@ -9,7 +9,7 @@ import (
 	// "google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"
 
-	pb "leomichalski.xyz/labrpc/src/operandos"
+	pb "github.com/leomichalski/pspd/grpc/operandos"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module leomichalski.xyz/labrpc
+module github.com/leomichalski/pspd/grpc
 
 go 1.22.4
 

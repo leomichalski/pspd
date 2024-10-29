@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.21.12
-// source: src/operandos/operandos.proto
+// source: operandos/operandos.proto
 
 package operandos
 
@@ -117,5 +117,5 @@ var OperandosService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "src/operandos/operandos.proto",
+	Metadata: "operandos/operandos.proto",
 }

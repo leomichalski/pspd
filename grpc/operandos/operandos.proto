@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "leomichalski.xyz/operandos";
+option go_package = "github.com/leomichalski/pspd/grpc/operandos";
 
 message Operandos {
   int32 x = 1;

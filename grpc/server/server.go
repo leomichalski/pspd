@@ -11,8 +11,7 @@ import (
 	// "google.golang.org/grpc/examples/data"
 	// "google.golang.org/protobuf/proto"
 
-	// pb "calcula"
-	pb "leomichalski.xyz/labrpc/src/operandos"
+	pb "github.com/leomichalski/pspd/grpc/operandos"
 )
 
 type operandosServiceServer struct {
