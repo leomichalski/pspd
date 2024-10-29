@@ -25,10 +25,10 @@ program PROG {
 rpcgen -a calcula.x
 ```
 
-## Compilar o cliente
+## Compilar calcula_client e calcula_server
 
 Obs: pode ser q o caminho "/usr/include/tirpc" seja diferente no seu PC
 
 ```bash
-make -f Makefile.calcula calcula_client LDLIBS="-ltirpc" CFLAGS=-I/usr/include/tirpc
+make -f Makefile.calcula LDLIBS="-ltirpc" CFLAGS=-I/usr/include/tirpc
 ```
