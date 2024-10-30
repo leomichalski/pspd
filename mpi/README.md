@@ -1,11 +1,17 @@
-# MPICH
+# MPI
 
-Vamos usar o MPICH, não o OpenMPI.
-
-## Setup
+## Setup do MPICH
 
 ```bash
 sudo apt install mpich
+```
+
+## Setup do OpenMPI
+
+Em vez do MPICH, é possível utilizar o OpenMPI.
+
+```bash
+sudo apt install libopenmpi-dev
 ```
 
 ## Compilar código MPI
