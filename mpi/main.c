@@ -10,17 +10,17 @@
 // MPI_ANY_TAG
 
 int main(int argc, char *argv[]) {
-    MPI_Status status;
-
+    // Mensagem de string
     const int STRING_MSG_LEN = 256;
     char string_msg[STRING_MSG_LEN];
-
+    // Mensagem de int
     int number_msg;
-
+    // Mensagem de vetor de int
     const int NUMBER_VEC_LEN = 3;
     int number_vec_msg[NUMBER_VEC_LEN];
     int number_vec_idx;
-
+    // MPI related vars
+    MPI_Status status;
     int rank, size;
 
     MPI_Init(&argc, &argv);
