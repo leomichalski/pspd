@@ -18,5 +18,5 @@ mpicc -o main.o main.c
 
 ```bash
 # -np: number of processes
-mpirun -np 8 ./main.o
+mpirun -np 4 ./main.o
 ```

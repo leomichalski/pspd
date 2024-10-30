@@ -18,7 +18,11 @@ int main(int argc, char *argv[]) {
 
     MPI_Init(&argc, &argv);
 
+    // A diferenca do rank para o PID eh que
+    // o PID pode ser o mesmo em maquinas diferentes,
+    // ja o rank sempre vai ser unico para cada processo.
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    // Size eh a quantidade de processos.
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     printf("rank: %d; size (nprocs): %d; pid: %d; ppid: %d.\n", rank, size, getpid(), getppid());
 
