@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
     if (DATA_LEN % size > 0) {
         // TODO: printar no stderr
-        printf("Erro: 100 precisa ser divisivel pelo numero de processos, pois 100 eh a quantidade de elementos no vetor a ser distribuido entre os processos.");
+        printf("Erro: %d precisa ser divisivel pelo numero de processos, pois %d eh a quantidade de elementos no vetor a ser distribuido entre os processos.", DATA_LEN, DATA_LEN);
         // TODO: retornar valor adequado
         return -1;
     }
