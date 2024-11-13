@@ -1,0 +1,95 @@
+apiVersion: kubeflow.org/v2beta1
+kind: MPIJob
+metadata:
+  name: main-mpi-job-run00
+spec:
+  runPolicy:
+    cleanPodPolicy: Running
+  mpiReplicaSpecs:
+    Launcher:
+      replicas: 1
+      template:
+        spec:
+          initContainers:
+          - command:
+            - /bin/bash
+            - -c
+            args:
+            - mpicc -o /mnt/mpi-bin/main.o /mnt/mpi-src/main.c
+            image: mpioperator/openmpi-builder:latest
+            name: mpi-builder
+            volumeMounts:
+            - name: mpi-src
+              mountPath: /mnt/mpi-src
+            - name: mpi-bin
+              mountPath: /mnt/mpi-bin
+            resources:
+              limits:
+                cpu: 100m
+                memory: 64Mi
+          containers:
+          - command:
+            - /bin/bash
+            - -c
+            args:
+            - mpirun --allow-run-as-root -np 2 /mnt/mpi-bin/main.o
+            # mpirun --allow-run-as-root -np 2 -bind-to none -map-by slot -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x PATH -mca pml ob1 -mca btl ^openib /mnt/mpi-bin/main.o
+            image: mpioperator/openmpi:latest
+            name: mpi-runner
+            volumeMounts:
+            - name: mpi-bin
+              mountPath: /mnt/mpi-bin
+            resources:
+              requests:
+                cpu: 2
+                memory: 128Mi
+              limits:
+                cpu: 2
+                memory: 128Mi
+          volumes:
+          - name: mpi-src
+            configMap:
+              name: main-mpi-job
+          - name: mpi-bin
+            emptyDir: {}
+    Worker:
+      replicas: 1
+      template:
+        spec:
+          initContainers:
+          - command:
+            - /bin/bash
+            - -c
+            args:
+            - mpicc -o /mnt/mpi-bin/main.o /mnt/mpi-src/main.c
+            image: mpioperator/openmpi-builder:latest
+            name: mpi-builder
+            volumeMounts:
+            - name: mpi-src
+              mountPath: /mnt/mpi-src
+            - name: mpi-bin
+              mountPath: /mnt/mpi-bin
+            resources:
+              limits:
+                cpu: 100m
+                memory: 64Mi
+          containers:
+          - image: mpioperator/openmpi:latest
+            name: mpi-worker
+            volumeMounts:
+            - name: mpi-bin
+              mountPath: /mnt/mpi-bin
+            resources:
+              requests:
+                cpu: 2
+                memory: 128Mi
+              limits:
+                cpu: 2
+                memory: 128Mi
+          volumes:
+          - name: mpi-src
+            configMap:
+              name: main-mpi-job
+          - name: mpi-bin
+            emptyDir: {}
+  slotsPerWorker: 2

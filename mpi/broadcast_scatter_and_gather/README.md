@@ -11,7 +11,7 @@ git clone git@github.com:leomichalski/pspd.git
 Ir para a pasta "pspd/mpi".
 
 ```bash
-cd pspd/mpi
+cd pspd/mpi/scatter_and_gather
 ```
 
 ### Setup e execução no Debian.
