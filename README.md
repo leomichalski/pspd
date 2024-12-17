@@ -48,7 +48,7 @@ help create view
 ```
 
 ```sql
-create view myview as (select 1);
+create or replace view myview as (select 1);
 ```
 
 # having
