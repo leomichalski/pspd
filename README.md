@@ -15,3 +15,9 @@ mysql -u root -p
 create database if not exists bla;
 
 mysql -u root -p bla < dump.sql
+
+# Views
+
+help create view
+
+create view myview as (select 1);
