@@ -1,3 +1,10 @@
+
+
+# mysql server
+
+docker exec -it mysql bash
+
+
 # Dump da database
 mysqldump -u root -p mysql | tee dump.sql
 
