@@ -75,6 +75,27 @@ a() {
 }
 ```
 
+# spark, kafka, hadoop
+
+hadoop hdfs + python
+
+https://colab.research.google.com/drive/160BLmEgto57pch16XLYqWeW493HYfqLh#scrollTo=0BFe98xFMWdP
+
+spark e RDD
+
+https://colab.research.google.com/drive/1wUkAERKhXqSbRjIbB_6d4VnyyDHKh7If?usp=drive_link
+
+spark
+
+https://colab.research.google.com/drive/1LjnniTBbKz-177mYSTpEwkYRvj1h8aLk?usp=drive_link
+
+spark sql
+
+https://colab.research.google.com/drive/1LHcdSyOb4jQiZmhBwsN417ztu7oLn0o9?usp=drive_link
+
+kafka + spark
+
+https://colab.research.google.com/drive/1BHFbFP7Bs38APEhYOsOxqrEYFNbXbBSt?usp=drive_link
 # openmp
 
 1
